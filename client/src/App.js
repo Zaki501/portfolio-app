@@ -1,26 +1,49 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Calculator from "./component/calculator"
+import styled from "styled-components"
+import Header from "./component/header"
+import Navbar from "./component/navbar"
 
-function App() {
-  const [data, setData] = React.useState(null);
+import Frontend from "./component/frontend";
+import Backend from "./component/backend";
 
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+
+
+export default function App() {
+
+  const STYLED_CONTAINER = styled.div`
+height: 300vh;
+font-family: arial, helvetica;
+display: flex;
+flex-direction: column;
+`
+  const STYLED_PAGE = styled.div`
+ height: 100vh;
+ background-color: ${props => props.primary ? "#117460" : "rgb(50,50,50)"};
+width: 100%;
+ `
+
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-      <Calculator/>
-    </div>
+    <STYLED_CONTAINER>
+
+      <Navbar />
+
+      <STYLED_PAGE primary id="first">
+
+        <Header />
+
+      </STYLED_PAGE>
+      <STYLED_PAGE id="second">
+
+        <Backend />
+
+      </STYLED_PAGE>
+      <STYLED_PAGE primary id="third">
+
+        <Frontend />
+
+      </STYLED_PAGE>
+
+    </STYLED_CONTAINER>
   );
 }
-
-export default App;
