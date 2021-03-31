@@ -25,6 +25,7 @@ const STYLED_ANCHOR = styled.a`
 font-weight: bold;
 scroll-behavior: smooth;
 text-decoration: none;
+color: #ffafff!important;
 
 :visited {
     color: #ffafff!important;
@@ -53,7 +54,7 @@ export default function Backend() {
 
 
                 <STYLED_SECTION>
-                    <h2><STYLED_ANCHOR href="https://zaki-portfolio.herokuapp.com/api/shorturl">Timestamp Microservice</STYLED_ANCHOR></h2>
+                    <h2><STYLED_ANCHOR href="https://zaki-portfolio.herokuapp.com/api/timestamp">Timestamp Microservice</STYLED_ANCHOR></h2>
 
                     <p>
                         Takes a date entry in any format, and returns Unix and UTC date.
@@ -78,7 +79,7 @@ export default function Backend() {
                 </STYLED_SECTION>
                 <STYLED_SECTION>
 
-                    <h2><STYLED_ANCHOR href="https://zaki-portfolio.herokuapp.com//api/headerparser">Request Header Parser</STYLED_ANCHOR></h2>
+                    <h2><STYLED_ANCHOR href="https://zaki-portfolio.herokuapp.com/api/headerparser">Request Header Parser</STYLED_ANCHOR></h2>
 
                     <p>
                         Parses the request header, and returns IP address, software and language.
